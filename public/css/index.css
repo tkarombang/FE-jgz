@@ -1,0 +1,121 @@
+.container {
+  margin: auto;
+  padding: .2rem 1.2rem;
+  width: 80vw;
+  border: 1px solid #007BFF;
+  border-radius: 5px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 50px;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #007BFF;
+  font-size: 18px;
+  margin: 10px;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.halDepan {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#tambahDev {
+  background-color: slategrey;
+  color: white;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#tambahDev:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  width: 50%;
+  height: 60%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+/* .modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+} */
+
+#developerForm{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background: #0056b3;
+  color: white;
+}
+
+button#cancelDev {
+  background: red;
+  color: white;
+}
