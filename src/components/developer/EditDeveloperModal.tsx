@@ -15,7 +15,7 @@ export default function EditDeveloperModal({ isOpen, onClose, developer, onDevel
       nama: "",
       email: "",
       role: "",
-      phone: null,
+      phone: "",
       tanggalLahir: "",
       status: null,
       gender: null,
@@ -47,29 +47,34 @@ export default function EditDeveloperModal({ isOpen, onClose, developer, onDevel
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
-      <div className="bg-white p-6 rounded-lg w-1/3">
-        <h2 className="text-xl font-bold mb-4">Edit Developer</h2>
+      <div className="bg-slate-800 p-6 rounded-lg w-3/5 transition-all scale-95 animate-fade-in" tabIndex={-1}>
+        <h2 className="text-xl text-zinc-300 font-bold mb-4">Edit Developer</h2>
         <form onSubmit={handleSubmit}>
-          <label className="block mb-2">
-            Nama:
-            <input type="text" name="nama" value={formData.nama} onChange={handleChange} className="w-full px-2 py-1 border rounded" />
-          </label>
+          <div className="flex flex-row items-center justify-around mb-5 ">
+            <label className="block text-sm text-zinc-300 font-medium mr-2 w-16">Nama:</label>
+            <input type="text" name="nama" value={formData.nama} onChange={handleChange} className="text-zinc-800 w-full bg-slate-300 outline outline-4 outline-offset-0 outline-pink-600 focus:outline-lime-700 rounded p-2" />
+          </div>
 
-          <label className="block mb-2">
-            Email:
-            <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-2 py-1 border rounded" />
-          </label>
+          <div className="flex flex-row items-center justify-around mb-5">
+            <label className="block text-sm text-zinc-300 font-medium mr-2 mr-2 w-16">Email:</label>
+            <input type="email" name="email" value={formData.email} onChange={handleChange} className="text-zinc-800 w-full bg-slate-300 outline outline-4 outline-offset-0 outline-pink-600 focus:outline-lime-700 rounded p-2" />
+          </div>
 
-          <label className="block mb-2">
-            Role:
-            <input type="text" name="role" value={formData.role} onChange={handleChange} className="w-full px-2 py-1 border rounded" />
-          </label>
+          <div className="flex flex-row items-center justify-around mb-5">
+            <label className="block text-sm text-zinc-300 font-medium mr-2 w-16">Role:</label>
+            <input type="text" name="role" value={formData.role} onChange={handleChange} className="text-zinc-800 w-full bg-slate-300 outline outline-4 outline-offset-0 outline-pink-600 focus:outline-lime-700 rounded p-2" />
+          </div>
+
+          <div className="flex flex-row items-center justify-around mb-5">
+            <label className="block text-sm text-zinc-300 font-medium mr-2 w-16">Phone:</label>
+            <input type="text" name="phone" value={formData.phone} onChange={handleChange} className="text-zinc-800 w-full bg-slate-300 outline outline-4 outline-offset-0 outline-pink-600 focus:outline-lime-700 rounded p-2" />
+          </div>
 
           <div className="flex justify-end mt-4">
-            <button type="button" className="px-4 py-2 bg-gray-500 text-white rounded mr-2" onClick={onClose}>
+            <button type="button" className="px-4 py-2 bg-gray-400 hover:bg-gray-600 text-white rounded mr-2" onClick={onClose}>
               Batal
             </button>
-            <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded">
+            <button type="submit" className="px-4 py-2 bg-lime-600 hover:bg-lime-800 text-white rounded">
               Update
             </button>
           </div>

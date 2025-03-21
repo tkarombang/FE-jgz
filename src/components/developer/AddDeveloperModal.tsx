@@ -34,40 +34,40 @@ export default function AddDeveloperModal({ isOpen, onClose, onDeveloperAdded }:
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex item-center justify-center, bg-gray-800 bg-opacity-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 className="text-xl font-semibold mb-4">Tambah Developer</h2>
+    <div className="fixed inset-0 flex item-center justify-center bg-gray-800 bg-opacity-50">
+      <div className="bg-slate-800 p-6 rounded-lg shadow-lg w-2/5 h-4/5 m-auto transform transition-all scale-95 animate-fade-in">
+        <h2 className="text-xl text-zinc-300 text-center font-semibold mb-4">Tambah Developer</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label className="block text-sm font-medium">Nama</label>
-            <input type="text" className="w-full border rounded p-2" value={nama} onChange={(e) => setNama(e.target.value)} required />
+            <label className="block text-sm text-zinc-300 font-medium mb-2">Nama</label>
+            <input type="text" className="w-full bg-slate-300 outline outline-4 outline-offset-0 outline-pink-600 focus:outline-lime-700 rounded p-2" value={nama} onChange={(e) => setNama(e.target.value)} required />
           </div>
 
           <div className="mb-3">
-            <label className="block text-sm font-medium">Email</label>
-            <input type="email" className="w-full border rounded p-2" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <label className="block text-sm text-zinc-300 font-medium mb-2">Email</label>
+            <input type="email" className="w-full bg-slate-300 outline outline-4 outline-offset-0 outline-pink-600 focus:outline-lime-700 rounded p-2" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
 
           <div className="mb-3">
-            <label className="block text-sm font-medium">Role</label>
-            <input type="text" className="w-full border rounded p-2" value={role} onChange={(e) => setRole(e.target.value)} required />
+            <label className="block text-sm text-zinc-300 font-medium mb-2">Role</label>
+            <input type="text" className="w-full bg-slate-300 outline outline-4 outline-offset-0 outline-pink-600 focus:outline-lime-700 rounded p-2" value={role} onChange={(e) => setRole(e.target.value)} required />
           </div>
 
           <div className="mb-3">
-            <label className="block text-sm font-medium">Phone</label>
-            <input type="number" className="w-full border rounded p-2" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+            <label className="block text-sm text-zinc-300 font-medium mb-2">Phone</label>
+            <input type="number" className="w-full bg-slate-300 outline outline outline-4 outline-offset-0 outline-pink-600 focus:outline-lime-700 rounded p-2" value={phone} onChange={(e) => setPhone(e.target.value)} required />
           </div>
 
           <div className="mb-3">
-            <label className="block text-sm font-medium">Date</label>
-            <input type="date" className="w-full border rounded p-2" value={tanggalLahir} onChange={(e) => setTanggalLahir(e.target.value)} required />
+            <label className="block text-sm font-medium text-zinc-300 mb-2">Date</label>
+            <input type="date" className="w-full bg-slate-300 outline outline-4 outline-offset-0 outline-pink-600 focus:outline-lime-700 rounded p-2" value={tanggalLahir} onChange={(e) => setTanggalLahir(e.target.value)} required />
           </div>
 
           <div className="flex justify-end gap-2">
-            <button type="button" className="px-4 py-2 bg-gray-400 text-white rounded" onClick={onClose}>
+            <button type="button" className="px-4 py-2 bg-gray-400 hover:bg-gray-600 text-white rounded" onClick={onClose}>
               Cancel
             </button>
-            <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded" disabled={isLoading}>
+            <button type="submit" className="px-4 py-2 bg-lime-600 hover:bg-lime-800 text-white rounded" disabled={isLoading}>
               {isLoading ? "Menambahkan..." : "Add Dev"}
             </button>
           </div>

@@ -87,24 +87,38 @@ npm run build
 ## 📚 Project Structure
 
 ```bash
-src/
-├── app.ts
-├── router.ts
-├── developer/
-│   ├── apiServiceDev.ts
-│   ├── listdev.ts
-│   ├── developersPage.ts
-├── projects/
-│   ├── apiServiceProj.ts
-│   ├── listProject.ts
-│   ├── projectPage.ts
-├── users/
-│   ├── users.ts
-├── welcome.ts
-├── css/
-│   ├── ......css
-│   ├── ....css
-│   ├── ...css
+ /
+├── docs/                      # Dokumentasi atau gambar referensi
+│   ├── developer.png
+├── node_modules/
+├── public/                     # Untuk aset statis seperti index, gambar, favicon, dll.
+│   ├── index.html
+├── src/                        # Semua kode utama aplikasi
+│   ├── components/             # Folder untuk komponen UI
+│   │   ├── developer/
+│   │   │   ├── AddDeveloperModal.tsx
+│   │   │   ├── DeveloperTable.tsx
+│   │   │   ├── EditDeveloperModal.tsx
+│   │   ├── projects/
+│   │   ├── ui/                 # Komponen UI reusable (misal: modal, alert, button)
+│   ├── pages/                  # Folder untuk halaman utama
+│   │   ├── DeveloperPage.tsx
+│   │   ├── WelcomePage.tsx
+│   ├── services/               # API services
+│   │   ├── apiServicesDev.ts
+│   ├── styles/                 # Untuk file CSS/Tailwind
+│   │   ├── input.css
+│   │   ├── output.css
+│   ├── App.tsx                 # Root component
+│   ├── main.tsx                # Entry point utama
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.json
+├── webpack.config.js
+
 ```
 
 ### Explanation:

@@ -7,7 +7,7 @@ export interface Developer {
   nama: string;
   email: string;
   role: string;
-  phone?: string | null;
+  phone: string;
   tanggalLahir?: string | null;
   status?: string | null;
   gender?: number | null;

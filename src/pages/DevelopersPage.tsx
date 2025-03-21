@@ -31,22 +31,19 @@ const DeveloperPage: React.FC = () => {
   };
 
   const handleDelete = async (id: number) => {
-    const confirmDelete = window.confirm("Apakah Anda Yakin Untuk Menghapusnya");
-    if (confirmDelete) {
-      await ApiServiceDev.deleteDeveloper(id);
-      setDevelopers(developers.filter((dev) => dev.developerId !== id));
-    }
+    await ApiServiceDev.deleteDeveloper(id);
+    setDevelopers(developers.filter((dev) => dev.developerId !== id));
   };
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3x1 font-bold mb-4">Daftar Developers</h1>
-      <button className="mb-4 px-4 py-2 bg-green-500 text-white rounded" onClick={() => setIsModalAddOpen(true)}>
+      <h1 className="text-3xl text-zinc-600 font-bold mb-4">Daftar Developers</h1>
+      <button className="mb-4 px-4 py-2 bg-emerald-400 hover:bg-emerald-600 text-white rounded" onClick={() => setIsModalAddOpen(true)}>
         + Tambah Developer
       </button>
 
       {/* TAMPILKAN TABEL DEVELOPERS */}
-      {loading ? <p className="text-center">Memuat Data...!</p> : <DeveloperTable developers={developers} onEdit={handleDeveloperEdit} onDelete={handleDelete} />}
+      {loading ? <p className="text-center text-zinc-600">Memuat Data...!</p> : <DeveloperTable developers={developers} onEdit={handleDeveloperEdit} onDelete={handleDelete} />}
 
       {/* TAMPILKAN MODAL ADD DEVELOPER */}
       <AddDeveloperModal isOpen={isModalAddOpen} onClose={() => setIsModalAddOpen(false)} onDeveloperAdded={fetchDevelopers} />
