@@ -42,6 +42,8 @@
     "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "flowbite-react": "^0.10.2",
+    "framer-motion": "^12.5.0",
     "lucide-react": "^0.483.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

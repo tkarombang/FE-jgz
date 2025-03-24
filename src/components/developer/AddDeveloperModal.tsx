@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ApiServiceDev } from "../../services/apiServiceDev";
+import { motion } from "framer-motion";
 
 interface AddDeveloperModalProps {
   isOpen: Boolean;
@@ -35,7 +36,7 @@ export default function AddDeveloperModal({ isOpen, onClose, onDeveloperAdded }:
 
   return (
     <div className="fixed inset-0 flex item-center justify-center bg-gray-800 bg-opacity-50">
-      <div className="bg-slate-800 p-6 rounded-lg shadow-lg w-2/5 h-4/5 m-auto transform transition-all scale-95 animate-fade-in">
+      <motion.div className="bg-slate-700 p-6 rounded-lg shadow-lg w-2/5 h-4/5 m-auto" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.2 }}>
         <h2 className="text-xl text-zinc-300 text-center font-semibold mb-4">Tambah Developer</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -55,7 +56,7 @@ export default function AddDeveloperModal({ isOpen, onClose, onDeveloperAdded }:
 
           <div className="mb-3">
             <label className="block text-sm text-zinc-300 font-medium mb-2">Phone</label>
-            <input type="number" className="w-full bg-slate-300 outline outline outline-4 outline-offset-0 outline-pink-600 focus:outline-lime-700 rounded p-2" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+            <input type="number" className="w-full bg-slate-300 outline outline-4 outline-offset-0 outline-pink-600 focus:outline-lime-700 rounded p-2" value={phone} onChange={(e) => setPhone(e.target.value)} required />
           </div>
 
           <div className="mb-3">
@@ -64,15 +65,16 @@ export default function AddDeveloperModal({ isOpen, onClose, onDeveloperAdded }:
           </div>
 
           <div className="flex justify-end gap-2">
-            <button type="button" className="px-4 py-2 bg-gray-400 hover:bg-gray-600 text-white rounded" onClick={onClose}>
+            <motion.button type="button" className="px-4 py-2 bg-gray-400 hover:bg-gray-600 text-white rounded" onClick={onClose} whileHover={{ scale: 1.02 }} whileTap={{ scale: 1 }}>
               Cancel
-            </button>
-            <button type="submit" className="px-4 py-2 bg-lime-600 hover:bg-lime-800 text-white rounded" disabled={isLoading}>
+            </motion.button>
+
+            <motion.button type="submit" className="px-4 py-2 bg-lime-600 hover:bg-lime-800 text-white rounded" disabled={isLoading} whileHover={{ scale: 1.02 }} whileTap={{ scale: 1 }}>
               {isLoading ? "Menambahkan..." : "Add Dev"}
-            </button>
+            </motion.button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 }

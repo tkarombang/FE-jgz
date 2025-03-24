@@ -177,6 +177,12 @@ npm run build
 
 ---
 
+6. \*_Developing Interactive Animation_:\*
+
+## Farmer-motion
+
+## Flowbites (Components UI)
+
 ## 🧑‍💻 Author
 
 Muhammad Azwar Anas - [Linkedin](https://www.linkedin.com/in/muhanaz) | [GitHub](https://github.com/tkarombang)

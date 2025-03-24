@@ -1,7 +1,14 @@
+const flowbite = require("flowbite-react/tailwind");
+
 module.exports = {
   content: [
     "./src/**/*.{ts,tsx,js,jsx}",
     "./public/**/*.html", // Sesuaikan dengan struktur proyek Anda
+    flowbite.content(),
+  ],
+  plugins: [
+    // ...
+    flowbite.plugin(),
   ],
   theme: {
     extend: {
