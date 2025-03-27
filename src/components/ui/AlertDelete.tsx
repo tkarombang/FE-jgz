@@ -10,7 +10,7 @@ interface DeleteProps {
 }
 
 const AlertDelete: React.FC<DeleteProps> = ({ isOpenDel, onCloseDel, developerId, onConfirm }) => {
-  const [showAlert, setShowAlert] = useState(false);
+  const [isModalDeleteOpen, setIsModalDeleteOpen] = useState(false);
   const [alertType, setAlertType] = useState<"success" | "failure" | null>(null);
 
   // Handler untuk tombol "Ya!" yang akan memicu alert
@@ -18,9 +18,9 @@ const AlertDelete: React.FC<DeleteProps> = ({ isOpenDel, onCloseDel, developerId
     console.log("AlertDelete: Confirm Deletion");
     onConfirm();
     setAlertType("success");
-    setShowAlert(true);
+    setIsModalDeleteOpen(true);
     setTimeout(() => {
-      setShowAlert(false);
+      setIsModalDeleteOpen(false);
     }, 1500);
   };
 
@@ -39,9 +39,9 @@ const AlertDelete: React.FC<DeleteProps> = ({ isOpenDel, onCloseDel, developerId
         </div>
       </motion.div>
 
-      {showAlert && (
+      {isModalDeleteOpen && (
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className="absolute top-4 right-4">
-          <Alert color={alertType === "success" ? "success" : "failure"} onDismiss={() => setShowAlert(false)}>
+          <Alert color={alertType === "success" ? "success" : "failure"} onDismiss={() => setIsModalDeleteOpen(false)}>
             <span className="font-medium">{alertType === "success" ? "Success!" : "Error!"}</span>
             {alertType === "success" ? " Developer has been deleted." : " Failed to delete developer."}
           </Alert>
