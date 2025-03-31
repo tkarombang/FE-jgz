@@ -15,14 +15,14 @@ module.exports = {
       template: './public/index.html', // file HTML pertama
       filename: 'index.html'
     }),
-    new HtmlWebpackPlugin({
-      template: './public/users.html', // file HTML kedua
-      filename: 'users.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './public/listDev.html', // file HTML ketiga
-      filename: 'listDev.html'
-    })
+    // new HtmlWebpackPlugin({
+    //   template: './public/users.html', // file HTML kedua
+    //   filename: 'users.html'
+    // }),
+    // new HtmlWebpackPlugin({
+    //   template: './public/listDev.html', // file HTML ketiga
+    //   filename: 'listDev.html'
+    // })
   ],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],  // Resolusi untuk file .ts dan .js

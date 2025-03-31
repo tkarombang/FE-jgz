@@ -36,7 +36,7 @@ export default function AddDeveloperModal({ isOpen, onClose, onDeveloperAdded }:
 
   return (
     <div className="fixed inset-0 flex item-center justify-center bg-gray-800 bg-opacity-50">
-      <motion.div className="bg-slate-700 p-6 rounded-lg shadow-lg w-2/5 h-4/5 m-auto" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.2 }}>
+      <motion.div className="bg-slate-700 p-6 rounded-lg shadow-lg w-2/5 h-4/5 m-auto" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.4 }} transition={{ duration: 0.2 }}>
         <h2 className="text-xl text-zinc-300 text-center font-semibold mb-4">Tambah Developer</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -65,11 +65,11 @@ export default function AddDeveloperModal({ isOpen, onClose, onDeveloperAdded }:
           </div>
 
           <div className="flex justify-end gap-2">
-            <motion.button type="button" className="px-4 py-2 bg-gray-400 hover:bg-gray-600 text-white rounded" onClick={onClose} whileHover={{ scale: 1.02 }} whileTap={{ scale: 1 }}>
+            <motion.button type="button" className="px-4 py-2 bg-gray-400 hover:bg-gray-600 text-white rounded" onClick={onClose}>
               Cancel
             </motion.button>
 
-            <motion.button type="submit" className="px-4 py-2 bg-lime-600 hover:bg-lime-800 text-white rounded" disabled={isLoading} whileHover={{ scale: 1.02 }} whileTap={{ scale: 1 }}>
+            <motion.button type="submit" className="px-4 py-2 bg-lime-600 hover:bg-lime-800 text-white rounded" disabled={isLoading}>
               {isLoading ? "Menambahkan..." : "Add Dev"}
             </motion.button>
           </div>

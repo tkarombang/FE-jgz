@@ -5,11 +5,10 @@ import { Alert } from "flowbite-react";
 interface DeleteProps {
   isOpenDel: boolean;
   onCloseDel: () => void;
-  developerId: number | null;
   onConfirm: () => void;
 }
 
-const AlertDelete: React.FC<DeleteProps> = ({ isOpenDel, onCloseDel, developerId, onConfirm }) => {
+const AlertDelete: React.FC<DeleteProps> = ({ isOpenDel, onCloseDel, onConfirm }) => {
   const [isModalDeleteOpen, setIsModalDeleteOpen] = useState(false);
   const [alertType, setAlertType] = useState<"success" | "failure" | null>(null);
 
@@ -28,7 +27,7 @@ const AlertDelete: React.FC<DeleteProps> = ({ isOpenDel, onCloseDel, developerId
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <motion.div className="bg-slate-700 p-6 rounded-lg shadow-lg" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.4 }} transition={{ duration: 0.2 }}>
-        <h2 className="text-xl text-stone-300 font-bold mb-4">Yakin Ingin Menghapus ID {developerId} ?</h2>
+        <h2 className="text-xl text-stone-300 font-bold mb-4">Yakin Ingin Menghapus ?</h2>
         <div className="flex justify-around">
           <button className="bg-rose-400 text-white px-4 py-2 rounded hover:bg-rose-600" onClick={handleConfirm}>
             Ya!
