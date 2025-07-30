@@ -64,6 +64,20 @@ export default function AddDeveloperModal({ isOpen, onClose, onDeveloperAdded }:
             <input type="date" className="w-full bg-slate-300 outline outline-4 outline-offset-0 outline-pink-600 focus:outline-lime-700 rounded p-2" value={tanggalLahir} onChange={(e) => setTanggalLahir(e.target.value)} required />
           </div>
 
+          <div className="mb-3">
+            <label className="block text-sm font-medium text-zinc-300 mb-2">Gender</label>
+            <div className="flex gap-4">
+              <label className="inline-flex items-center text-sm font-medium text-zinc-300">
+                <input checked type="radio" value="" name="default-radio" className="mr-2" />
+                Pria
+              </label>
+              <label className="inline-flex items-center text-sm font-medium text-zinc-300">
+                <input type="radio" value="" name="default-radio" className="mr-2" />
+                Wanita
+              </label>
+            </div>
+          </div>
+
           <div className="flex justify-end gap-2">
             <motion.button type="button" className="px-4 py-2 bg-gray-400 hover:bg-gray-600 text-white rounded" onClick={onClose}>
               Cancel

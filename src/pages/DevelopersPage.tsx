@@ -100,6 +100,7 @@ const DeveloperPage: React.FC = () => {
   return (
     <div className="flex flex-col container mx-auto p-6">
       <h1 className="text-3xl text-zinc-600 font-bold mb-4">Daftar Developers</h1>
+
       <motion.button className="flex flex-row justify-center mb-4 px-4 py-2 bg-emerald-400 hover:bg-emerald-600 text-white rounded" onClick={() => setIsModalAddOpen(true)} whileHover={{ scale: 1.02 }} whileTap={{ scale: 1 }}>
         <UserRoundPlus className="mr-2" /> Tambah Developer
       </motion.button>
@@ -123,7 +124,7 @@ const DeveloperPage: React.FC = () => {
       <AnimatePresence initial={false}>{isModalEditOpen && <EditDeveloperModal isOpen={isModalEditOpen} onClose={() => setIsModalEditOpen(false)} developer={selectedDeveloper} onDeveloperUpdated={fetchDevelopers} />}</AnimatePresence>
 
       {/* TAMPILKAN MODAL DEVELOPER DELETE */}
-      <AnimatePresence>{isModalDeleteOpen && <AlertDelete key={`delete-modal-${devIdToDel}`} isOpenDel={isModalDeleteOpen} onCloseDel={closeAlertDel} developerId={devIdToDel} onConfirm={confirmDelete} />}</AnimatePresence>
+      <AnimatePresence>{isModalDeleteOpen && <AlertDelete key={`delete-modal-${devIdToDel}`} isOpenDel={isModalDeleteOpen} onCloseDel={closeAlertDel} onConfirm={confirmDelete} />}</AnimatePresence>
     </div>
   );
 };
